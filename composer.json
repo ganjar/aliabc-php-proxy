@@ -1,0 +1,20 @@
+{
+  "name": "ganjar/aliabc-php-demo",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "platform": {
+      "php": "5.6.4"
+    }
+  },
+  "repositories": [
+    {
+      "url": "https://github.com/ganjar/aliabc-php",
+      "type": "git"
+    }
+  ],
+  "require": {
+    "ganjar/aliabc-php": "dev-master"
+  },
+  "autoload": {}
+}
