@@ -2,6 +2,8 @@
 
 use ALI\ALIAbc;
 use ALI\Buffer\BufferTranslate;
+use ALI\Buffer\PreProcessors\IgnoreHtmlTagsPreProcessor;
+use ALI\Buffer\Processors\HtmlLinkProcessor;
 use ALI\Event;
 use \ALI\Translate\Language\Language;
 use \ALI\Buffer\Processors\HtmlTagProcessor;
@@ -30,23 +32,24 @@ $translate->addOriginalProcessor(new TrimSpacesOriginalProcessor());
 
 //BufferTranslate
 $bufferTranslate = new BufferTranslate($translate);
+$bufferTranslate->addPreProcessor(new IgnoreHtmlTagsPreProcessor(['script', 'style']));
 $bufferTranslate->addProcessor(new HtmlTagProcessor());
 
 //Add buffer processor for parse phrases in custom tags
 //$bufferTranslate->addProcessor(new CustomTagProcessor('[[', ']]'));
 
 //Add buffer processor for replace language in URLs
-//$bufferTranslate->addProcessor(new HtmlLinkProcessor());
+$bufferTranslate->addProcessor(new HtmlLinkProcessor());
 
 $ali = new ALIAbc();
 $ali->setTranslate($translate);
 $ali->setBufferTranslate($bufferTranslate);
 
 //events
-$ali->getEvent()->on(Event::EVENT_MISSING_TRANSLATION, function ($phrase, \ALI\Translate\Translate $translate) use ($aliTranslateSource) {
-    //$translate->getSource()->saveTranslate($translate->getLanguage(), $phrase, '');
-    //$translate->getSource()->saveToTranslateQueue($phrase);
-    //$aliTranslateSource->insertOriginal($phrase);
+$ali->getEvent()->on(Event::EVENT_MISSING_TRANSLATION, function ($phrase, \ALI\Translate\Translate $translate) {
+    if (!$translate->getLanguage()->getIsOriginal()) {
+        $translate->getSource()->saveTranslate($translate->getLanguage(), $phrase, uniqid());
+    }
 });
 
 //Use buffers
