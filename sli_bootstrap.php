@@ -3,6 +3,7 @@
 use ALI\ALIAbc;
 use ALI\Buffer\BufferTranslate;
 use ALI\Buffer\PreProcessors\IgnoreHtmlTagsPreProcessor;
+use ALI\Buffer\Processors\HtmlAttributesProcessor;
 use ALI\Buffer\Processors\HtmlLinkProcessor;
 use ALI\Event;
 use \ALI\Translate\Language\Language;
@@ -10,7 +11,7 @@ use \ALI\Buffer\Processors\HtmlTagProcessor;
 use ALI\Translate\OriginalProcessors\TrimSpacesOriginalProcessor;
 use \ALI\Translate\Sources\CsvFileSource;
 
-//Set translation source - from file with || delimiter (original||translate)
+//Set translation source
 $source = new CsvFileSource(__DIR__ . '/lng/', ",", 'csv');
 
 //Parse language
@@ -34,6 +35,7 @@ $translate->addOriginalProcessor(new TrimSpacesOriginalProcessor());
 $bufferTranslate = new BufferTranslate($translate);
 $bufferTranslate->addPreProcessor(new IgnoreHtmlTagsPreProcessor(['script', 'style']));
 $bufferTranslate->addProcessor(new HtmlTagProcessor());
+$bufferTranslate->addProcessor(new HtmlAttributesProcessor(['alt', 'title', 'placeholder']));
 
 //Add buffer processor for parse phrases in custom tags
 //$bufferTranslate->addProcessor(new CustomTagProcessor('[[', ']]'));
