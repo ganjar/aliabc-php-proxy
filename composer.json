@@ -14,7 +14,9 @@
     }
   ],
   "require": {
-    "ganjar/aliabc-php": "dev-master"
+    "ganjar/aliabc-php": "dev-master",
+    "yandex/translate-api": "^1.5",
+    "vlucas/phpdotenv": "^4.1"
   },
   "autoload": {}
 }

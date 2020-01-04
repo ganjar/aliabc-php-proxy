@@ -11,6 +11,9 @@ use \ALI\Buffer\Processors\HtmlTagProcessor;
 use ALI\Translate\OriginalProcessors\TrimSpacesOriginalProcessor;
 use \ALI\Translate\Sources\CsvFileSource;
 
+$originalLang = getenv('LANGUAGE_ORIGINAL');
+$allLanguages = explode(',', getenv('LANGUAGE_ALL'));
+
 //Set translation source
 $source = new CsvFileSource(__DIR__ . '/lng/', ",", 'csv');
 
@@ -19,9 +22,12 @@ $languageAlias = false;
 if (preg_match('#^/(?<language>\w{2})(?:/|\Z)#', $_SERVER['REQUEST_URI'], $parseUriMatches)) {
     $languageAlias = $parseUriMatches['language'];
 }
+if ($languageAlias && !in_array($languageAlias, $allLanguages, true)) {
+    throw new DomainException('Unsupported language');
+}
 
 //Set language
-$language = new Language($languageAlias, '', $languageAlias == 'en' || !$languageAlias);
+$language = new Language($languageAlias, '', $languageAlias == $originalLang || !$languageAlias);
 
 //Make Translate instance
 $translate = new \ALI\Translate\Translate(
@@ -47,10 +53,14 @@ $ali = new ALIAbc();
 $ali->setTranslate($translate);
 $ali->setBufferTranslate($bufferTranslate);
 
+//Yandex translate
+$yaTranslate = new \Yandex\Translate\Translator(getenv('YANDEX_TRANSLATE_API_KEY'));
+
 //events
-$ali->getEvent()->on(Event::EVENT_MISSING_TRANSLATION, function ($phrase, \ALI\Translate\Translate $translate) {
+$ali->getEvent()->on(Event::EVENT_MISSING_TRANSLATION, function ($phrase, \ALI\Translate\Translate $translate) use ($yaTranslate, $originalLang) {
     if (!$translate->getLanguage()->getIsOriginal()) {
-        $translate->getSource()->saveTranslate($translate->getLanguage(), $phrase, uniqid());
+        $translatedPhrase = $yaTranslate->translate($phrase, $originalLang . '-' . $translate->getLanguage()->getAlias());
+        $translate->getSource()->saveTranslate($translate->getLanguage(), $phrase, $translatedPhrase);
     }
 });
 
