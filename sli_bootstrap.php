@@ -8,8 +8,10 @@ use ALI\Buffer\Processors\HtmlLinkProcessor;
 use ALI\Event;
 use \ALI\Translate\Language\Language;
 use \ALI\Buffer\Processors\HtmlTagProcessor;
+use ALI\Translate\OriginalProcessors\ReplaceNumbersOriginalProcessor;
 use ALI\Translate\OriginalProcessors\TrimSpacesOriginalProcessor;
 use \ALI\Translate\Sources\CsvFileSource;
+use ALI\Translate\TranslateProcessors\ReplaceNumbersTranslateProcessor;
 
 $originalLang = getenv('LANGUAGE_ORIGINAL');
 $allLanguages = explode(',', getenv('LANGUAGE_ALL'));
@@ -36,6 +38,8 @@ $translate = new \ALI\Translate\Translate(
     new Event()
 );
 $translate->addOriginalProcessor(new TrimSpacesOriginalProcessor());
+$translate->addOriginalProcessor(new ReplaceNumbersOriginalProcessor());
+$translate->addTranslateProcessor(new ReplaceNumbersTranslateProcessor());
 
 //BufferTranslate
 $bufferTranslate = new BufferTranslate($translate);
