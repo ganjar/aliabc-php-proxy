@@ -92,7 +92,7 @@ echo $ali->getBuffer()->buffering(function () {
 });*/
 
 //buffering all content
-$ali->getBuffer()->start();
+//$ali->getBuffer()->start();
 
 //Fast translate
 //echo $ali->getTranslate()->translate('Hello word');
