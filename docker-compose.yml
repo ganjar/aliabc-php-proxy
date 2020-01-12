@@ -5,9 +5,11 @@ services:
   aliabc-php-demo:
     hostname: aliabc-php-demo
     image: richarvey/nginx-php-fpm:latest
-    command: -c "cp -n /app/.env.example /app/.env && /start.sh"
+    entrypoint:
+      - /bin/bash
+    command: -c "cp -n /app/.env.example /app/.env; /start.sh"
     ports:
-    - 80
+      - 80
     volumes:
-    - .:/app
-    - ./conf/nginx.conf:/etc/nginx/sites-available/default.conf
+      - .:/app
+      - ./conf/nginx.conf:/etc/nginx/sites-available/default.conf
