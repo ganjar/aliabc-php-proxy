@@ -68,36 +68,4 @@ $ali->getEvent()->on(Event::EVENT_MISSING_TRANSLATION, function ($phrase, \ALI\T
     }
 });
 
-//Use buffers
-$ali->iniSourceBuffering();
-
-//start/end
-/*$ali->getBuffer()->start();
-echo '<b>[[Hello word]]</b>';
-$ali->getBuffer()->end();
-
-echo 'Untranslated: <b>[[Currency pairs]]</b>';
-
-$ali->getBuffer()->start();
-echo '<b>[[Currency pairs]]</b>';
-$ali->getBuffer()->end();
-
-//simple add
-echo $ali->getBuffer()->add('<b>Hello word 3</b>');
-//fail
-$ali->getBuffer()->add('<b>Hello word 4</b>');
-
-echo $ali->getBuffer()->buffering(function () {
-    echo '<b>Hello word 4</b>';
-});*/
-
-//buffering all content
-//$ali->getBuffer()->start();
-
-//Fast translate
-//echo $ali->getTranslate()->translate('Hello word');
-//Save translate
-//$ali->getTranslate()->saveTranslate($language, 'Hello word', 'Привет мир');
-//$ali->getTranslate()->delete('Hello word');
-
 return $ali;
