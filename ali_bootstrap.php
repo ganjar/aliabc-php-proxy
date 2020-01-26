@@ -14,7 +14,7 @@ use \ALI\Translate\Sources\CsvFileSource;
 use ALI\Translate\TranslateProcessors\ReplaceNumbersTranslateProcessor;
 
 $originalLang = getenv('LANGUAGE_ORIGINAL');
-$allLanguages = explode(',', getenv('LANGUAGE_ALL'));
+$allLanguages = explode(',', getenv('LANGUAGES'));
 
 //Set translation source
 $source = new CsvFileSource(__DIR__ . '/lng/', ",", 'csv');
@@ -51,7 +51,8 @@ $bufferTranslate->addProcessor(new HtmlAttributesProcessor(['alt', 'title', 'pla
 //$bufferTranslate->addProcessor(new CustomTagProcessor('[[', ']]'));
 
 //Add buffer processor for replace language in URLs
-$bufferTranslate->addProcessor(new HtmlLinkProcessor());
+$linkProcessor = new HtmlLinkProcessor($_SERVER['HTTP_HOST']);
+$bufferTranslate->addProcessor($linkProcessor);
 
 $ali = new ALIAbc();
 $ali->setTranslate($translate);
