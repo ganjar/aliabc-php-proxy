@@ -1,28 +1,87 @@
-"Translate example","Приклад перевести "
-"Project name","Назва проекту "
-Home,Вдома
-"About us","Про нас"
-Contacts,Контакти
-"Fish text, meet!","Риба текст, відповідати!"
-"The participation of specialists in the formation of forms of development. Thus, participation in the formation of positions occupying positions in relation to assigned tasks. A diverse and rich experience.","Участь фахівців у формуванні форм розвитку. Таким чином, участь у формуванні позицій, займаючи позиції щодо поставлених завдань. Різноманітний і багатий досвід."
-"Comrades! participation in the formation of appropriate conditions for activation. They require progressive development. Interesting practice shows that the models are interesting. Interesting experiments show progress in development. A diverse and rich experience of constant quantitative growth and the scope of our activity plays an important role in shaping the existing financial and administrative conditions.","Товариші! участь у формуванні відповідних умов для активації. Вони вимагають прогресивного розвитку. Цікава практика показує, що моделі цікаві. Цікаві досліди показують прогрес у розвитку. Різноманітний і багатий досвід постійний кількісний ріст і сфера нашої активності відіграє важливу роль у формуванні існуючих фінансових та адміністративних умов."
-"The new organizational model is an interesting experiment in testing new proposals. Structures and assessments make it possible to assess the significance of existing financial and administrative conditions. Everyday practice shows that the constant outreach support of our activities adequately determines the creation of positions held by participants in relation to the tasks assigned. Participation of specialists in the formation of positions holding positions in relation to assigned tasks. Likewise, the constant outreach to our business is an interesting experiment in verifying the relevant conditions for activation.","Нова організаційна модель являє собою цікавий експеримент у тестуванні нових пропозицій. Структури і оцінки дозволяють оцінити значення наявних фінансових та адміністративних умов. Повсякденна практика показує, що постійне інформаційно-пропагандистської підтримки нашої діяльності, адекватно обумовлює створення позицій, займаних учасниками щодо поставлених завдань. Участь фахівців у формуванні позицій, які займають посади щодо поставлених завдань. Аналогічно, постійне інформаційно-роз'яснювальної роботи з Наш бізнес являє собою цікавий експеримент перевірки відповідних умов активізації."
-"Tasks play an important role in the formation of appropriate conditions for activation. Training requires the identification and refinement of development models. Constantly outreach support for our activities allows us to perform important tasks in developing development models. Thus, the further development of various forms of activity is an interesting experiment in testing development models. Implementation and modernization of mass participation systems. However, formal activity plays an important role in the formation of forms of development.","Задачі відіграють важливу роль у формуванні відповідних умов для активації. Навчання вимагає визначення і уточнення моделі розвитку. Постійно інформаційне забезпечення нашої діяльності дозволяє виконувати важливі завдання по розробці моделі розвитку. Таким чином, подальший розвиток різних форм діяльності являє собою цікавий експеримент перевірки моделі розвитку. Впровадження та модернізації систем масового участі. Однак, формальна активність відіграє важливу роль у формуванні форм розвитку."
-"Experimental verification of compliance with activation conditions. The structure of the organization allows us to assess the importance of mass participation systems. The varied and rich experience in implementing experimental planning targets is an interesting experiment in testing systems of mass participation. An interesting experimental test of mass participation systems.","Експериментальна перевірка дотримання умови активації. Структура організації дозволяє оцінити значення систем масового участі. Різноманітний і багатий досвід у здійсненні експериментальної планових завдань являє собою цікавий експеримент перевірки систем масового участі. Цікавий експериментальної перевірки систем масового участі."
-Reviews,Коментарі
-"We have 10 reviews","Ми маємо 10 коментарів"
-"We have 20 reviews","Ми маємо 20 відгуки"
-"We have 13 reviews","У нас 13 коментарів"
-Navigation,Навігація
-Head,Голова
-Information,Інформація
-Other,Інші
-Water,Води
-Salt,Сіль
-"Company 2013","Компанія 2013"
-"We have 0 reviews","У нас є 0 коментарів"
-"Company 0","Компанія 0"
-"[[Hello word]]","[[Привіт слово]]"
-"[[Currency pairs]]",[[Пар]]
-"Hello word 0","Привіт слово 0"
-"© Company 0"," Компанія © 0"
+Subscribe,Підписатися
+Large,Великі
+Search,Пошук
+"Sign up",Зареєструйтеся
+World,Світ
+U.S.,США
+Technology,Технологія
+Design,Дизайн
+Culture,Культура
+Business,Бізнес
+Politics,Політика
+Opinion,Відгук
+Science,Наука
+Health,Здоров'я
+Style,Стиль
+Travel,Подорожі
+"Title of a longer featured blog post","Назва фігурує більше в блозі "
+"Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.","Декілька рядків тексту, які формують Ліда, інформуючи швидко і якісно нових читачів про те, що найбільш цікаві в утриманні цього поста."
+"Continue reading...","Продовжити читання..."
+"Featured post","Кращий пост"
+"Nov 0","Листопада 0"
+"This is a wider card with supporting text below as a natural lead-in to additional content.","Це більш широке карта з підтримкою тексту нижче в якості природного призвести до додаткових матеріалів."
+"Continue reading","Продовжити читання"
+Placeholder,Заповнювач
+Thumbnail,Ескіз
+"Post title","Заголовний пост"
+"From the Firehose","Від знайомий"
+"Sample blog post","Зразок запису блогу"
+"January 0, 0 by","0 січня, 0"
+Mark,Марк
+"This blog post shows a few different types of content that’s supported and styled with Bootstrap. Basic typography, images, and code are all supported.","Цей блог показує кілька різних типів контенту, який підтримується і оформлені з Bootstrap. Основна типографіка, зображення, і всі код підтримується."
+"Cum sociis natoque penatibus et magnis","Диплом sociis natoque penatibus Пов магнис"
+"dis parturient montes","Дис отелившаяся Монтес"
+", nascetur ridiculus mus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.",", nascetur школяра МУЗ. Aenean EU Лев Квам. Побиття ornare сім лациния Квам venenatis передодня. СЕД Міннеаполіс posuere є в макроекономічна. Кра Маттіс Міннеаполіс пурус сидіти Амет будь-якого fermentum.."
+"Curabitur blandit tempus porttitor.","Curabitur blandit Tempus в porttitor."
+"Nullam quis risus eget urna mollis","Nullam магазину рисус егет Молліс урненском "
+"ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.","ornare Вел ЄС Лео. Nullam ID долор ідентифікатор житлова площа організації та обрання нового керівництва vehicula ут ідентифікатор еліт."
+"Etiam porta","Etiam порту"
+"sem malesuada magna","сім malesuada Магна"
+"mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.","euismod Молліс. Кра Маттіс Міннеаполіс пурус сидіти Амет будь-якого fermentum.. Aenean лациния Бібендум немає Міннеаполіс СЕД."
+Heading,Заголовок
+"Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.","Vivamus sagittis lacus Вел augue laoreet погляд долор auctor faucibus. Молліс УДО, є номери commodo передбачуване luctus, Нісд erat porttitor язичком, егет лациния одио ФЕУ NEC еліт. Морби Лев рисус, порту змінного струму Міннеаполіс змінного струму, передодня у Ерос."
+Sub-heading,"У рубриці"
+"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.","Диплом sociis natoque penatibus Пов магнис Дис породіллі Монтес, nascetur школяра МУЗ."
+"Example code block","Приклад коду блоку"
+"Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.","Aenean лациния Бібендум немає Міннеаполіс СЕД. Etiam порту і sem malesuada Magna в Молліс euismod. Fusce dapibus, tellus В змінного струму курсус commodo, політика системи Mauris condimentum житлова площа, ут будь-якого fermentum. маса."
+"Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.","Диплом sociis natoque penatibus Пов магнис Дис породіллі Монтес, nascetur школяра МУЗ. Aenean лациния Бібендум немає Міннеаполіс СЕД. Etiam порту і sem malesuada Magna в Молліс euismod. Fusce dapibus, tellus В змінного струму курсус commodo, політика системи Mauris condimentum житлова площа, ут будь-якого fermentum. маса Хусто сидіти Амет рисус."
+"Praesent commodo cursus magna, vel scelerisque nisl consectetur et.","Praesent commodo курсус ""Магна"", ТОВ ""нисл"" scelerisque Міннеаполіс Пов."
+"Donec id elit non mi porta gravida at eget metus.","Донець ID еліт не мі Porta вагітність на eget метус."
+"Nulla vitae elit libero, a pharetra augue.","Немає витае еліт ліберо, а pharetra augue."
+"Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.","Донецька ullamcorper немає номера метус auctor fringilla. Немає витае еліт ліберо, а pharetra augue."
+"Vestibulum id ligula porta felis euismod semper.","Передодня ідентифікатор лигулы порту euismod Феліс Семпер."
+"Maecenas sed diam eget risus varius blandit sit amet non magna.","Меценат СЕД діам егет рисус Варіус blandit сидіти Амет номери Магна."
+"Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.","Кра Маттіс Міннеаполіс пурус сидіти Амет будь-якого fermentum.. СЕД Міннеаполіс posuere є в макроекономічна."
+"Another blog post","Ще один блог"
+"December 0, 0 by","0 грудня 0"
+Jacob,Джейкоб
+"New feature","Нова функція"
+Chris,Кріс
+Older,Старше
+Newer,Нові
+About,Про
+Archives,Архіви
+"March 0","Березня 0"
+"February 0","Лютого 0"
+"January 0","Січня 0"
+"December 0","0 грудня "
+"November 0","Листопада 0"
+"October 0","0 жовтня "
+"September 0","0 вересня "
+"August 0","0 серпня "
+"July 0","0 липня "
+"June 0","Червня 0"
+"May 0","Може 0"
+"April 0","0 квітня "
+Elsewhere,"В іншому місці"
+GitHub,"На GitHub"
+Twitter,Твіттер
+Facebook,Facebook
+"Blog template built for","Шаблон блогу, побудований для"
+Bootstrap,Бутстрап
+by,за
+@mdo,@МДО
+"Back to top","Повернутися до початку"
+English,Англійська
+Русский,Російська
+Українська,Українська
