@@ -21,11 +21,11 @@ $source = new CsvFileSource(__DIR__ . '/lng/', ",", 'csv');
 
 //Parse language
 $languageAlias = false;
-if (preg_match('#^/(?<language>\w{2})(?:/|\Z)#', $_SERVER['REQUEST_URI'], $parseUriMatches)) {
+if (preg_match('#^/(?<language>\w{2})(?:/|\Z|\?)#', $_SERVER['REQUEST_URI'], $parseUriMatches)) {
     $languageAlias = $parseUriMatches['language'];
 }
 if ($languageAlias && !in_array($languageAlias, $allLanguages, true)) {
-    throw new DomainException('Unsupported language');
+    $languageAlias = $originalLang;
 }
 
 //Set language
@@ -68,5 +68,8 @@ $ali->getEvent()->on(Event::EVENT_MISSING_TRANSLATION, function ($phrase, \ALI\T
         $translate->getSource()->saveTranslate($translate->getLanguage(), $phrase, $translatedPhrase);
     }
 });
+
+//Delete language from REQUEST_URI
+$_SERVER['REQUEST_URI'] = preg_replace('#^/' . $language->getAlias() . '(?:/|\Z|(\?))#Us', '/$1', $_SERVER['REQUEST_URI']);
 
 return $ali;

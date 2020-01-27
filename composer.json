@@ -16,7 +16,8 @@
   "require": {
     "ganjar/aliabc-php": "dev-master",
     "yandex/translate-api": "^1.5",
-    "vlucas/phpdotenv": "^4.1"
+    "vlucas/phpdotenv": "^4.1",
+    "jenssegers/proxy": "^3.0"
   },
   "autoload": {}
 }
