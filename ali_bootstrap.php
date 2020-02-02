@@ -37,7 +37,6 @@ $translate = new \ALI\Translate\Translate(
     $source,
     new Event()
 );
-$translate->addOriginalProcessor(new TrimSpacesOriginalProcessor());
 $translate->addOriginalProcessor(new ReplaceNumbersOriginalProcessor());
 $translate->addTranslateProcessor(new ReplaceNumbersTranslateProcessor());
 
