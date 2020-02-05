@@ -7,9 +7,7 @@ $ali = include __DIR__ . '/../ali_bootstrap.php';
 /** @var Proxy\Proxy $proxy */
 $proxy = include __DIR__ . '/../proxy_bootstrap.php';
 
-$ali->initSourceBuffering();
-
-$ali->getBuffer()->start();
+ob_start();
 
 // Forward the request and get the response.
 $response = $proxy->forward($request)->to(getenv('PROXY_TARGET'));
@@ -17,4 +15,4 @@ $response = $proxy->forward($request)->to(getenv('PROXY_TARGET'));
 // Output response to the browser.
 (new Zend\Diactoros\Response\SapiEmitter)->emit($response);
 
-$ali->getBuffer()->end();
+echo $ali->getBufferTranslate()->translateBuffer(ob_get_clean());
