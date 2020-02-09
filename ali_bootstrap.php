@@ -7,7 +7,6 @@ use ALI\Buffer\Processors\HtmlAttributesProcessor;
 use ALI\Buffer\Processors\HtmlLinkProcessor;
 use \ALI\Translate\Language\Language;
 use \ALI\Buffer\Processors\HtmlTagProcessor;
-use ALI\Translate\OriginalProcessors\HtmlEntityDecodeOriginalProcessor;
 use ALI\Translate\OriginalProcessors\ReplaceNumbersOriginalProcessor;
 use \ALI\Translate\Sources\CsvFileSource;
 use ALI\Translate\TranslateProcessors\ReplaceNumbersTranslateProcessor;
@@ -45,7 +44,6 @@ $translate = new \ALI\Translate\Translate(
     }
 );
 $translate->addOriginalProcessor(new ReplaceNumbersOriginalProcessor());
-$translate->addOriginalProcessor(new HtmlEntityDecodeOriginalProcessor());
 $translate->addTranslateProcessor(new ReplaceNumbersTranslateProcessor());
 
 //BufferTranslate
