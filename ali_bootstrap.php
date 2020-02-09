@@ -5,11 +5,10 @@ use ALI\Buffer\BufferTranslate;
 use ALI\Buffer\PreProcessors\IgnoreHtmlTagsPreProcessor;
 use ALI\Buffer\Processors\HtmlAttributesProcessor;
 use ALI\Buffer\Processors\HtmlLinkProcessor;
-use ALI\Event;
 use \ALI\Translate\Language\Language;
 use \ALI\Buffer\Processors\HtmlTagProcessor;
+use ALI\Translate\OriginalProcessors\HtmlEntityDecodeOriginalProcessor;
 use ALI\Translate\OriginalProcessors\ReplaceNumbersOriginalProcessor;
-use ALI\Translate\OriginalProcessors\TrimSpacesOriginalProcessor;
 use \ALI\Translate\Sources\CsvFileSource;
 use ALI\Translate\TranslateProcessors\ReplaceNumbersTranslateProcessor;
 
@@ -46,6 +45,7 @@ $translate = new \ALI\Translate\Translate(
     }
 );
 $translate->addOriginalProcessor(new ReplaceNumbersOriginalProcessor());
+$translate->addOriginalProcessor(new HtmlEntityDecodeOriginalProcessor());
 $translate->addTranslateProcessor(new ReplaceNumbersTranslateProcessor());
 
 //BufferTranslate
@@ -53,9 +53,6 @@ $bufferTranslate = new BufferTranslate($translate);
 $bufferTranslate->addPreProcessor(new IgnoreHtmlTagsPreProcessor(['script', 'style']));
 $bufferTranslate->addProcessor(new HtmlTagProcessor());
 $bufferTranslate->addProcessor(new HtmlAttributesProcessor(['alt', 'title', 'placeholder', 'content']));
-
-//Add buffer processor for parse phrases in custom tags
-//$bufferTranslate->addProcessor(new CustomTagProcessor('[[', ']]'));
 
 //Add buffer processor for replace language in URLs
 $linkProcessor = new HtmlLinkProcessor($_SERVER['HTTP_HOST']);
