@@ -9,10 +9,28 @@ $proxy = include __DIR__ . '/../proxy_bootstrap.php';
 
 ob_start();
 
+include __DIR__ . '/../language_switcher.php';
+
+$langSwitcher = ob_get_clean();
+
+ob_start();
+
 // Forward the request and get the response.
 $response = $proxy->forward($request)->to(getenv('PROXY_TARGET'));
 
 // Output response to the browser.
 (new Zend\Diactoros\Response\SapiEmitter)->emit($response);
+$proxyResponse = ob_get_clean();
 
-echo $ali->getBufferTranslate()->translateBuffer(ob_get_clean());
+//translate only http pages
+$contentType = $response->getHeader('Content-Type');
+if (!empty($contentType[0]) && $contentType[0] === 'text/html') {
+    $proxyResponse = str_replace(rtrim(getenv('PROXY_TARGET'), '/') . '/', '//' . $_SERVER['HTTP_HOST'] . '/',
+        $proxyResponse);
+    //$langSwitcher = '<iframe src="'.htmlspecialchars('data:text/html,' . rawurlencode($langSwitcher)).'"></iframe>';
+    $proxyResponse = preg_replace('#(<body\s?[^>]*>)#', '$1 ' . $langSwitcher, $proxyResponse);
+
+    echo $ali->getBufferTranslate()->translateBuffer($proxyResponse);
+} else {
+    echo $proxyResponse;
+}
