@@ -1,80 +1,86 @@
 <style>
-    .container {
+    #ali-lang-switcher-container::before,
+    #ali-lang-switcher-container::after,
+    #ali-lang-switcher-container *::before,
+    #ali-lang-switcher-container *::after {
+        all: unset;
+    }
+    #ali-lang-switcher-container .container {
         margin-right: auto;
         margin-left: auto;
         width: 960px;
         padding: 0;
     }
 
-    .languages {
+    #ali-lang-switcher-container {
         background-color: #035d90;
         height: 55px;
     }
 
-    .language-switcher {
+    #ali-lang-switcher-container .lang-switcher {
         float: right;
         margin: 5px 0 0;
     }
 
-    .languages .language-switcher li {
+    #ali-lang-switcher-container .lang-switcher li {
         display: block;
         float: left;
         padding-top: 1px;
         height: 22px;
     }
 
-    .languages .language-switcher li a.selected {
+    #ali-lang-switcher-container .lang-switcher li a.selected {
         cursor: default;
     }
 
-    .languages .language-switcher li a {
+    #ali-lang-switcher-container .lang-switcher li a {
         display: block;
-        width: 16px;
-        height: 16px;
-        padding: 3px 4px 0px 4px;
+        padding: 2px;
+        border-radius: 5px;
+        margin-right: 3px;
     }
 
-    .languages .language-switcher li a img {
+    #ali-lang-switcher-container .lang-switcher li a img {
         display: block;
+        height: 30px;
     }
 
-    .languages .language-switcher li a:hover,
-    .languages .language-switcher li a.selected {
-        background: #dfdfdf;
-        border-radius: 3px;
+    #ali-lang-switcher-container .lang-switcher li a:hover,
+    #ali-lang-switcher-container .lang-switcher li a.selected {
+        background: #FFF;
     }
-    .ali-logo {
+    #ali-lang-switcher-container .ali-logo {
         display: inline-block;
         padding: 5px;
     }
-    .ali-logo img {
-        height: 45px;
+    #ali-lang-switcher-container .ali-logo img {
+        height: 47px;
     }
 </style>
-<div class="languages">
+<div id="ali-lang-switcher-container">
     <div class="container">
         <a href="#" class="ali-logo">
             <img src="/static/img/aliabc.png" alt="">
         </a>
-        <ul class="language-switcher">
+        <ul class="lang-switcher">
             <li>
                 <a % href="/" class="selected">
-                    <img src="/static/img/flags/en.png">
+                    <img src="/static/img/flags-big/en.png">
                 </a>
             </li>
             <li>
                 <a % href="/ru/">
-                    <img src="/static/img/flags/ru.png">
+                    <img src="/static/img/flags-big/ru.png">
                 </a>
             </li>
             <li>
                 <a % href="/ua/">
-                    <img src="/static/img/flags/ua.png">
+                    <img src="/static/img/flags-big/ua.png">
                 </a>
             </li>
             <li>
-                <a % href="/cn/">
-                    <img src="/static/img/flags/cn.png">
+                <a % href="/zh/">
+                    <img src="/static/img/flags-big/cn.png">
                 </a>
             </li>
         </ul>

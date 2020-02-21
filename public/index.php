@@ -27,7 +27,6 @@ $contentType = $response->getHeader('Content-Type');
 if (!empty($contentType[0]) && strpos($contentType[0], 'text/html') !== false) {
     $proxyResponse = str_replace(rtrim(getenv('PROXY_TARGET'), '/') . '/', '//' . $_SERVER['HTTP_HOST'] . '/',
         $proxyResponse);
-    //$langSwitcher = '<iframe src="'.htmlspecialchars('data:text/html,' . rawurlencode($langSwitcher)).'"></iframe>';
     $proxyResponse = preg_replace('#(<body\s?[^>]*>)#', '$1 ' . $langSwitcher, $proxyResponse);
 
     echo $ali->getBufferTranslate()->translateBuffer($proxyResponse);
