@@ -5,6 +5,12 @@
     #ali-lang-switcher-container *::after {
         all: unset;
     }
+    #ali-lang-switcher-container a,
+    #ali-lang-switcher-container ul,
+    #ali-lang-switcher-container li,
+    #ali-lang-switcher-container img {
+        all: initial;
+    }
     #ali-lang-switcher-container .container {
         margin-right: auto;
         margin-left: auto;
@@ -19,7 +25,7 @@
 
     #ali-lang-switcher-container .lang-switcher {
         float: right;
-        margin: 5px 0 0;
+        margin: 10px 0 0 0 ;
     }
 
     #ali-lang-switcher-container .lang-switcher li {
@@ -45,6 +51,10 @@
         height: 30px;
     }
 
+    #ali-lang-switcher-container .lang-switcher li a:hover,
+    #ali-lang-switcher-container .lang-switcher li a:hover img {
+        cursor: pointer;
+    }
     #ali-lang-switcher-container .lang-switcher li a:hover,
     #ali-lang-switcher-container .lang-switcher li a.selected {
         background: #FFF;
