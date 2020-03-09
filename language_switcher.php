@@ -1,3 +1,6 @@
+<?php
+/** @var ALI\ALIAbc $ali */
+?>
 <style>
     #ali-lang-switcher-container::before,
     #ali-lang-switcher-container::after,
@@ -20,7 +23,7 @@
 
     #ali-lang-switcher-container {
         background-color: #035d90;
-        height: 55px;
+        height: 57px;
     }
 
     #ali-lang-switcher-container .lang-switcher {
@@ -41,9 +44,11 @@
 
     #ali-lang-switcher-container .lang-switcher li a {
         display: block;
-        padding: 2px;
+        padding: 2px 5px;
         border-radius: 5px;
         margin-right: 3px;
+        font-size: 25px;
+        color: #FFFFFF;
     }
 
     #ali-lang-switcher-container .lang-switcher li a img {
@@ -58,6 +63,7 @@
     #ali-lang-switcher-container .lang-switcher li a:hover,
     #ali-lang-switcher-container .lang-switcher li a.selected {
         background: #FFF;
+        color: #000000;
     }
     #ali-lang-switcher-container .ali-logo {
         display: inline-block;
@@ -75,22 +81,22 @@
         <ul class="lang-switcher">
             <li>
                 <a % href="/" class="selected">
-                    <img src="/static/img/flags-big/en.png">
+                    en
                 </a>
             </li>
             <li>
                 <a % href="/ru/">
-                    <img src="/static/img/flags-big/ru.png">
+                    ru
                 </a>
             </li>
             <li>
-                <a % href="/ua/">
-                    <img src="/static/img/flags-big/ua.png">
+                <a % href="/uk/">
+                    uk
                 </a>
             </li>
             <li>
                 <a % href="/zh/">
-                    <img src="/static/img/flags-big/cn.png">
+                    cn
                 </a>
             </li>
         </ul>
