@@ -17,19 +17,18 @@ ob_start();
 
 // Forward the request and get the response.
 $response = $proxy->forward($request)->to(getenv('PROXY_TARGET'));
-
-// Output response to the browser.
 (new Zend\Diactoros\Response\SapiEmitter)->emit($response);
 $proxyResponse = ob_get_clean();
 
-//translate only http pages
+//process http pages
 $contentType = $response->getHeader('Content-Type');
 if (!empty($contentType[0]) && strpos($contentType[0], 'text/html') !== false) {
-    $proxyResponse = str_replace(rtrim(getenv('PROXY_TARGET'), '/') . '/', '//' . $_SERVER['HTTP_HOST'] . '/',
-        $proxyResponse);
-    $proxyResponse = preg_replace('#(<body\s?[^>]*>)#', '$1 ' . $langSwitcher, $proxyResponse);
+    //replace absolute URLs with proxy URL
+    $proxyResponse = str_replace(rtrim(getenv('PROXY_TARGET'), '/') . '/', '//' . $_SERVER['HTTP_HOST'] . '/', $proxyResponse);
 
-    echo $ali->getBufferTranslate()->translateBuffer($proxyResponse);
-} else {
-    echo $proxyResponse;
+    //ALIABC translate
+    $proxyResponse = $ali->getBufferTranslate()->translateBuffer($proxyResponse);
+    $proxyResponse = preg_replace('#(<body\s?[^>]*>)#', '$1 ' . $langSwitcher, $proxyResponse);
 }
+
+echo $proxyResponse;
