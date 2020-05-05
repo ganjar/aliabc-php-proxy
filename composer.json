@@ -9,7 +9,7 @@
   },
   "repositories": [
     {
-      "url": "https://github.com/ganjar/aliabc-php",
+      "url": "https://github.com/ali-translator/translation",
       "type": "git"
     }
   ],
