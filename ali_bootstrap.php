@@ -3,13 +3,14 @@
 use ALI\Translation\Helpers\QuickStart\ALIAbcFactory;
 use ALI\Translation\Languages\Repositories\Factories\ArrayLanguageRepositoryFactory;
 use ALI\Translation\Url\UrlParserFactory;
+use Yandex\Translate\Translator;
 
 $originalLang = getenv('LANGUAGE_ORIGINAL');
 $allLanguages = explode(',', getenv('LANGUAGES'));
 $allLanguages = array_combine($allLanguages, $allLanguages);
 
 //Yandex translate
-$yaTranslate = new \Yandex\Translate\Translator(getenv('YANDEX_TRANSLATE_API_KEY'));
+$yaTranslate = new Translator(getenv('YANDEX_TRANSLATE_API_KEY'));
 
 $langRepositoryFactory = new ArrayLanguageRepositoryFactory();
 $langRepository = $langRepositoryFactory->createArrayLanguageRepository($allLanguages);
@@ -28,5 +29,6 @@ $translateCallback = function ($phrase, ALI\Translation\Translate\Translators\Tr
 
     return $translatedPhrase;
 };
+$ali->getTranslator()->addMissingTranslationCallback($translateCallback);
 
 return $ali;
