@@ -18,6 +18,7 @@ $urlParser = new UrlParserFactory($originalLang, $langRepository);
 $currentLanguage = $urlParser->createUrlLanguageResolver()->resolveUrlCurrentLanguage();
 $aliFactory = new ALIAbcFactory();
 $ali = $aliFactory->createALIByHtmlBufferCsvSource(__DIR__ . '/lng/', $originalLang, $currentLanguage);
+$ali->setLanguageRepository($langRepository);
 
 $translateCallback = function ($phrase, ALI\Translation\Translate\Translators\Translator $translate) use (
     $yaTranslate,
