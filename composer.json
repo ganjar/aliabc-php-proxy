@@ -9,15 +9,18 @@
   },
   "repositories": [
     {
-      "url": "https://github.com/ganjar/aliabc-php",
+      "url": "https://github.com/ali-translator/translation",
       "type": "git"
     }
   ],
   "require": {
-    "ganjar/aliabc-php": "dev-master",
+    "ali-translator/translation": "dev-master",
     "yandex/translate-api": "^1.5",
     "vlucas/phpdotenv": "^4.1",
     "jenssegers/proxy": "^3.0"
   },
-  "autoload": {}
+  "autoload": {},
+  "require-dev": {
+    "symfony/var-dumper": "^3.4"
+  }
 }

@@ -1,8 +1,10 @@
 <?php
 
+use ALI\Translation\ALIAbc;
+
 include __DIR__ . '/../vendor/autoload.php';
 include __DIR__ . '/../app_bootstrap.php';
-/** @var ALI\ALIAbc $ali */
+/** @var ALIAbc $ali */
 $ali = include __DIR__ . '/../ali_bootstrap.php';
 /** @var Proxy\Proxy $proxy */
 $proxy = include __DIR__ . '/../proxy_bootstrap.php';
@@ -26,8 +28,8 @@ if (!empty($contentType[0]) && strpos($contentType[0], 'text/html') !== false) {
     //replace absolute URLs with proxy URL
     $proxyResponse = str_replace(rtrim(getenv('PROXY_TARGET'), '/') . '/', '//' . $_SERVER['HTTP_HOST'] . '/', $proxyResponse);
 
-    //ALIABC translate
-    $proxyResponse = $ali->getBufferTranslate()->translateBuffer($proxyResponse);
+    //ALIABC translate //todo - fix
+    $proxyResponse = $ali->translateBuffer($proxyResponse);
     $proxyResponse = preg_replace('#(<body\s?[^>]*>)#', '$1 ' . $langSwitcher, $proxyResponse);
 }
 

@@ -1,5 +1,15 @@
 <?php
-/** @var ALI\ALIAbc $ali */
+/** @var ALI\Translation\ALIAbc $ali */
+
+use ALI\Translation\Url\UrlParserFactory;
+
+$currentUrl = $_SERVER['REQUEST_URI'];
+
+$urlParserFactory = new UrlParserFactory(
+        $ali->getTranslator()->getSource()->getOriginalLanguageAlias(),
+        $ali->getLanguageRepository()
+);
+$urlParser = $urlParserFactory->createParser();
 ?>
 <style>
     #ali-lang-switcher-container::before,
@@ -8,12 +18,14 @@
     #ali-lang-switcher-container *::after {
         all: unset;
     }
+
     #ali-lang-switcher-container a,
     #ali-lang-switcher-container ul,
     #ali-lang-switcher-container li,
     #ali-lang-switcher-container img {
         all: initial;
     }
+
     #ali-lang-switcher-container .container {
         margin-right: auto;
         margin-left: auto;
@@ -28,7 +40,7 @@
 
     #ali-lang-switcher-container .lang-switcher {
         float: right;
-        margin: 10px 0 0 0 ;
+        margin: 10px 0 0 0;
     }
 
     #ali-lang-switcher-container .lang-switcher li {
@@ -60,15 +72,18 @@
     #ali-lang-switcher-container .lang-switcher li a:hover img {
         cursor: pointer;
     }
+
     #ali-lang-switcher-container .lang-switcher li a:hover,
     #ali-lang-switcher-container .lang-switcher li a.selected {
         background: #FFF;
         color: #000000;
     }
+
     #ali-lang-switcher-container .ali-logo {
         display: inline-block;
         padding: 5px;
     }
+
     #ali-lang-switcher-container .ali-logo img {
         height: 47px;
     }
@@ -79,26 +94,14 @@
             <img src="/static/img/aliabc.png" alt="">
         </a>
         <ul class="lang-switcher">
-            <li>
-                <a % href="/" class="selected">
-                    en
-                </a>
-            </li>
-            <li>
-                <a % href="/ru/">
-                    ru
-                </a>
-            </li>
-            <li>
-                <a % href="/uk/">
-                    uk
-                </a>
-            </li>
-            <li>
-                <a % href="/zh/">
-                    cn
-                </a>
-            </li>
+            <?php foreach ($ali->getLanguageRepository()->getAll() as $language) { ?>
+                <li>
+                    <a %
+                       href="<?=htmlspecialchars($urlParser->generateUrlWithLanguageAlias($currentUrl, $language->getAlias()), ENT_QUOTES);?>" <?= ($language->getAlias() === $ali->getCurrentLanguageAlias() ? 'class="selected"' : '') ?>>
+                        <?=htmlspecialchars($language->getAlias());?>
+                    </a>
+                </li>
+            <?php } ?>
         </ul>
     </div>
 </div>
